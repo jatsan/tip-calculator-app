@@ -1,0 +1,27 @@
+@use '../util' as *;
+
+// .bill {
+//   width: rem(500);
+//   max-height: rem(48);
+//   border-radius: rem(5);
+//   background-color: var(--light-grayish-cyan-2);
+//   text-align: right;
+//   border: none;
+//   font-size: rem(24);
+// }
+.bill {
+  width: rem(310);
+  height: rem(48);
+  background-color: var(--light-grayish-cyan-2);
+  border: none;
+  border-radius: rem(10);
+  text-align: right;
+  font-family: var(--font-space-mono);
+  font-size: rem(24);
+  color: var(--very-dark-cyan);
+  padding: rem(20);
+}
+
+.calc_input__bill-label {
+  margin-bottom: rem(7.5);
+}

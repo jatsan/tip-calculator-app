@@ -1,0 +1,13 @@
+@use '../util/' as *;
+
+header {
+  margin-top: rem(50);
+  margin-bottom: rem(42);
+}
+.container {
+  flex-direction: column;
+  padding: rem(40);
+  background-color: var(--white);
+  border-top-left-radius: rem(30);
+  border-top-right-radius: rem(30);
+}

@@ -3,4 +3,12 @@
 body {
   font-family: var(--font-space-mono);
   font-size: rem(24);
+  background-color: var(--light-grayish-cyan-1);
+}
+
+.calc_input__bill-label {
+  display: block;
+  font-size: rem(13);
+  color: var(--very-dark-cyan);
+  font-weight: 500;
 }

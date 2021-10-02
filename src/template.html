@@ -14,9 +14,21 @@
   </head>
   <body>
     <header class="flex-ja"></header>
-    <main>
-      Bill Select Tip % 5% 10% 15% 25% 50% Custom Number of People Tip Amount /
-      person Total / person Reset
+    <main class="container flex-ja">
+      <div class="calc_input">
+        <div class="calc_input__bill">
+          <label class="calc_input__bill-label" for="bill">Bill</label>
+          <input
+            class="bill"
+            type="number"
+            name="bill"
+            id="bill"
+            placeholder="0"
+          />
+        </div>
+        Select Tip % 5% 10% 15% 25% 50% Custom Number of People Tip
+      </div>
+      <div class="calc__output">Amount / person Total / person Reset</div>
     </main>
     <footer class="attribution">
       Challenge by
