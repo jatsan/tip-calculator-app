@@ -1,0 +1,6 @@
+@use '../util/' as *;
+
+body {
+  font-family: var(--font-space-mono);
+  font-size: rem(24);
+}

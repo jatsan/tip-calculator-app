@@ -1,0 +1,40 @@
+// // 640px, 1024px, 1400px
+$breakpoints-up: (
+  'medium': '40em',
+  'large': '71.875em',
+  'xlarge': '87.5em',
+);
+
+// // 639px, 1023px, 1399px
+$breakpoints-down: (
+  'small': '39.9375em',
+  'medium': '71.8125em',
+  'large': '87.4375em',
+);
+
+// Source: https://css-tricks.com/snippets/sass/mixin-manage-breakpoints/
+@mixin breakpoint-min($size) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints-up, $size) {
+    // Prints a media query based on the value
+    @media (min-width: map-get($breakpoints-up, $size)) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortuanatley, no value could be retrieved from `#{$size}`."
+        + "Available breakpoints are: #{map-keys($breakpoints-up)}.";
+  }
+}
+
+@mixin breakpoint-max($size) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints-down, $size) {
+    // Prints a media query based on the value
+    @media (max-width: map-get($breakpoints-down, $size)) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortuanatley, no value could be retrieved from `#{$size}`."
+          + "Available breakpoints are: #{map-keys($breakpoints-down)}.";
+  }
+}

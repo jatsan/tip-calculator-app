@@ -23,6 +23,7 @@ module.exports = {
     clean: true,
   },
   devServer: {
+    hot: false,
     static: {
       directory: path.resolve(__dirname, './dist'),
     },
