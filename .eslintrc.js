@@ -9,6 +9,6 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    semi: [ERROR, 'never'],
+    semi: ['error', 'never'],
   },
 }
