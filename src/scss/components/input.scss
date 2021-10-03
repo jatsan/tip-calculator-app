@@ -83,6 +83,7 @@
 
 .tip_custom::placeholder {
   color: var(--dark-cyan);
+  font-weight: 700;
 }
 
 .person {
@@ -117,9 +118,15 @@
   color: var(--dark-grayish-cyan-2);
 }
 
-.errMsg {
+.calc_input__ppl-labels {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.calc_input___err-label {
   visibility: hidden;
+  margin-bottom: rem(10);
   color: red;
   text-align: right;
-  font-size: rem(20);
 }
