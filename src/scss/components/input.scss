@@ -1,15 +1,7 @@
 @use '../util' as *;
 
-// .bill {
-//   width: rem(500);
-//   max-height: rem(48);
-//   border-radius: rem(5);
-//   background-color: var(--light-grayish-cyan-2);
-//   text-align: right;
-//   border: none;
-//   font-size: rem(24);
-// }
 .bill {
+  position: relative;
   width: rem(310);
   height: rem(48);
   background-color: var(--light-grayish-cyan-2);
@@ -20,8 +12,114 @@
   font-size: rem(24);
   color: var(--very-dark-cyan);
   padding: rem(20);
+  margin-bottom: rem(40);
+  font-weight: 700;
+}
+
+.bill::placeholder {
+  position: relative;
+  color: var(--dark-grayish-cyan-2);
+}
+
+.dollar_bill {
+  position: absolute;
+  margin-top: rem(8);
+  margin-left: rem(15);
+  z-index: 10;
 }
 
 .calc_input__bill-label {
   margin-bottom: rem(7.5);
+}
+
+.calc_input___tips {
+  margin-bottom: rem(30);
+}
+
+.calc_input___tips-label {
+  margin-bottom: rem(20);
+}
+
+.tipBtns {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: rem(50);
+}
+
+.tipBtn {
+  height: rem(50);
+  width: rem(146);
+  margin-bottom: rem(15);
+  border-radius: rem(5);
+  border: none;
+  background-color: var(--very-dark-cyan);
+  color: var(--white);
+  font-family: var(--font-space-mono);
+  font-size: rem(20);
+  font-weight: 500;
+}
+
+.tipBtn:active,
+.tipBtn:hover {
+  color: var(--very-dark-cyan);
+  background-color: var(--strong-cyan);
+}
+
+.tip_custom {
+  height: rem(50);
+  width: rem(145);
+  padding: rem(20);
+  text-align: right;
+  background-color: var(--light-grayish-cyan-2);
+  border: none;
+  border-radius: rem(10);
+  text-align: right;
+  font-family: var(--font-space-mono);
+  font-size: rem(24);
+  color: var(--very-dark-cyan);
+}
+
+.tip_custom::placeholder {
+  color: var(--dark-cyan);
+}
+
+.person {
+  position: absolute;
+  margin-top: rem(8);
+  margin-left: rem(15);
+  z-index: 10;
+}
+
+.calc_input___ppl-label {
+  margin-bottom: rem(10);
+}
+
+.ppl {
+  position: relative;
+  width: rem(310);
+  height: rem(48);
+  background-color: var(--light-grayish-cyan-2);
+  border: none;
+  border-radius: rem(10);
+  text-align: right;
+  font-family: var(--font-space-mono);
+  font-size: rem(24);
+  color: var(--very-dark-cyan);
+  padding: rem(20);
+  margin-bottom: rem(40);
+  font-weight: 700;
+}
+
+.ppl::placeholder {
+  position: relative;
+  color: var(--dark-grayish-cyan-2);
+}
+
+.errMsg {
+  visibility: hidden;
+  color: red;
+  text-align: right;
+  font-size: rem(20);
 }

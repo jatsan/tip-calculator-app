@@ -4,9 +4,11 @@ body {
   font-family: var(--font-space-mono);
   font-size: rem(24);
   background-color: var(--light-grayish-cyan-1);
+  height: 100vh;
+  width: 100vw;
 }
 
-.calc_input__bill-label {
+label {
   display: block;
   font-size: rem(13);
   color: var(--very-dark-cyan);

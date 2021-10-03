@@ -18,6 +18,7 @@
       <div class="calc_input">
         <div class="calc_input__bill">
           <label class="calc_input__bill-label" for="bill">Bill</label>
+          <div class="dollar_bill"></div>
           <input
             class="bill"
             type="number"
@@ -26,9 +27,44 @@
             placeholder="0"
           />
         </div>
-        Select Tip % 5% 10% 15% 25% 50% Custom Number of People Tip
+        <div class="calc_input___tips">
+          <label class="calc_input___tips-label" for="tips">Select Tip %</label>
+          <div class="tip_btns">
+            <button dataset="five" class="tipBtn five" value="5">5%</button>
+            <button dataset="ten" class="tipBtn ten" value="10">10%</button>
+            <button dataset="fiveteen" class="tipBtn fiveteen" value="15">
+              15%
+            </button>
+            <button dataset="twentyfive" class="tipBtn twentyfive" value="25">
+              25%
+            </button>
+            <button dataset="fifty" class="tipBtn fifty" value="50">50%</button>
+            <input
+              class="tip_custom"
+              type="number"
+              name="other"
+              id="other"
+              placeholder="Custom"
+            />
+          </div>
+        </div>
+        <div class="calc_input__ppl">
+          <label class="calc_input___ppl-label" for="ppl">
+            Number of People
+          </label>
+          <div class="person"></div>
+          <div class="calc_input__ppl">
+            <input
+              class="ppl"
+              type="number"
+              name="ppl"
+              id="ppl"
+              placeholder="0"
+            />
+          </div>
+        </div>
       </div>
-      <div class="calc__output">Amount / person Total / person Reset</div>
+      <div class="calc__output">Tip Amount / person Total / person Reset</div>
     </main>
     <footer class="attribution">
       Challenge by
