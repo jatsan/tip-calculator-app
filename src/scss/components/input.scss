@@ -1,5 +1,11 @@
 @use '../util' as *;
 
+.calc_input {
+  @include breakpoint-min('large') {
+    width: rem(298);
+  }
+}
+
 .bill {
   position: relative;
   width: rem(310);
@@ -14,6 +20,11 @@
   padding: rem(20);
   margin-bottom: rem(40);
   font-weight: 700;
+  cursor: pointer;
+
+  @include breakpoint-min('large') {
+    width: rem(295);
+  }
 }
 
 .bill::placeholder {
@@ -32,26 +43,34 @@
   margin-bottom: rem(7.5);
 }
 
-.calc_input___tips {
+.calc_input__tips {
   margin-bottom: rem(30);
+
+  @include breakpoint-min('large') {
+    width: rem(295);
+  }
 }
 
-.calc_input___tips-label {
+.calc_input__tips-label {
   margin-bottom: rem(20);
 }
 
-.tipBtns {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: rem(50);
+.tip_btns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  column-gap: rem(12);
+  row-gap: rem(12);
+
+  @include breakpoint-min('medium') {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
 }
 
 .tipBtn {
   height: rem(50);
   width: rem(146);
-  margin-bottom: rem(15);
   border-radius: rem(5);
   border: none;
   background-color: var(--very-dark-cyan);
@@ -59,12 +78,18 @@
   font-family: var(--font-space-mono);
   font-size: rem(20);
   font-weight: 500;
-}
+  cursor: pointer;
 
-.tipBtn:active,
-.tipBtn:hover {
-  color: var(--very-dark-cyan);
-  background-color: var(--strong-cyan);
+  &.selected {
+    color: var(--very-dark-cyan);
+    background-color: var(--strong-cyan);
+  }
+
+  @include breakpoint-min('large') {
+    width: rem(92);
+    height: rem(38);
+    font-size: rem(15);
+  }
 }
 
 .tip_custom {
@@ -79,6 +104,16 @@
   font-family: var(--font-space-mono);
   font-size: rem(24);
   color: var(--very-dark-cyan);
+  cursor: pointer;
+
+  @include breakpoint-min('large') {
+    width: rem(92);
+    height: rem(38);
+
+    &::placeholder {
+      font-size: rem(15);
+    }
+  }
 }
 
 .tip_custom::placeholder {
@@ -93,7 +128,7 @@
   z-index: 10;
 }
 
-.calc_input___ppl-label {
+.calc_input__ppl-label {
   margin-bottom: rem(10);
 }
 
@@ -111,6 +146,11 @@
   padding: rem(20);
   margin-bottom: rem(40);
   font-weight: 700;
+
+  @include breakpoint-min('large') {
+    width: rem(295);
+    margin-bottom: rem(0);
+  }
 }
 
 .ppl::placeholder {
@@ -124,7 +164,7 @@
   justify-content: space-between;
 }
 
-.calc_input___err-label {
+.calc_input__err-label {
   visibility: hidden;
   margin-bottom: rem(10);
   color: red;

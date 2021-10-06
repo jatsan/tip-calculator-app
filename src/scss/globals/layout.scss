@@ -4,10 +4,32 @@ header {
   margin-top: rem(50);
   margin-bottom: rem(42);
 }
+
 .container {
   flex-direction: column;
+  margin: 0 auto;
   padding: rem(40);
   background-color: var(--white);
   border-top-left-radius: rem(30);
   border-top-right-radius: rem(30);
+
+  @include breakpoint-min('large') {
+    flex-direction: row;
+    justify-content: space-between;
+    width: rem(720);
+    border-radius: rem(30);
+    padding: rem(38);
+  }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
 }
