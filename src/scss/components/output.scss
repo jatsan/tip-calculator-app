@@ -1,0 +1,13 @@
+@use '../util/' as *;
+
+.calc__output {
+  width: rem(328);
+  background-color: var(--very-dark-cyan);
+  border-radius: rem(10);
+  padding: rem(46) rem(25) rem(25) rem(25);
+
+  @include breakpoint-min('large') {
+    height: rem(326);
+    width: rem(323);
+  }
+}
