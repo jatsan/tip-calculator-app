@@ -1,13 +1,90 @@
 @use '../util/' as *;
 
 .calc__output {
+  height: rem(258);
   width: rem(328);
   background-color: var(--very-dark-cyan);
   border-radius: rem(10);
-  padding: rem(46) rem(25) rem(25) rem(25);
+  padding: 0 rem(25) rem(25) rem(25);
 
   @include breakpoint-min('large') {
-    height: rem(326);
+    height: rem(360);
     width: rem(323);
+  }
+}
+
+.calc__output_tipAmt {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: rem(15);
+  margin-top: rem(15);
+
+  @include breakpoint-min('large') {
+    margin-bottom: rem(25);
+    margin-top: rem(20);
+  }
+}
+
+.label1 {
+  font-size: rem(15);
+  color: var(--white);
+}
+
+.label2 {
+  font-size: rem(10);
+  color: var(--light-grayish-cyan-1);
+  line-height: 1.1;
+  opacity: 0.6;
+}
+
+.tipAmt_display {
+  color: var(--strong-cyan);
+  font-size: rem(28);
+  font-weight: 700;
+
+  @include breakpoint-min('large') {
+    font-size: rem(30);
+  }
+}
+
+.totalAmt_display {
+  color: var(--strong-cyan);
+  font-size: rem(28);
+  font-weight: 700;
+
+  @include breakpoint-min('large') {
+    font-size: rem(30);
+  }
+}
+
+.calc__output_totalAmt {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: rem(20);
+
+  @include breakpoint-min('large') {
+    margin-bottom: rem(100);
+  }
+}
+
+.resetBtn {
+  height: rem(40);
+  width: rem(284);
+  margin: 0 auto;
+  color: var(--very-dark-cyan);
+  background-color: var(--strong-cyan);
+  border: none;
+  border-radius: rem(5);
+  text-transform: uppercase;
+  font-weight: 700;
+
+  @include breakpoint-min('large') {
+    width: rem(283);
+    height: rem(49);
+    font-size: rem(15);
   }
 }
