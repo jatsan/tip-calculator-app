@@ -10,6 +10,10 @@
   position: relative;
   width: rem(310);
   height: rem(48);
+  background-image: url('../images/icon-dollar.svg');
+  background-repeat: no-repeat;
+  background-position-x: rem(10);
+  background-position-y: center;
   background-color: var(--light-grayish-cyan-2);
   border: none;
   border-radius: rem(10);
@@ -30,13 +34,6 @@
 .bill::placeholder {
   position: relative;
   color: var(--dark-grayish-cyan-2);
-}
-
-.dollar_bill {
-  position: absolute;
-  margin-top: rem(8);
-  margin-left: rem(15);
-  z-index: 10;
 }
 
 .calc_input__bill-label {
@@ -121,13 +118,6 @@
   font-weight: 700;
 }
 
-.person {
-  position: absolute;
-  margin-top: rem(8);
-  margin-left: rem(15);
-  z-index: 10;
-}
-
 .calc_input__ppl-label {
   margin-bottom: rem(10);
 }
@@ -136,6 +126,10 @@
   position: relative;
   width: rem(310);
   height: rem(48);
+  background-image: url('../images/icon-person.svg');
+  background-repeat: no-repeat;
+  background-position-x: rem(10);
+  background-position-y: center;
   background-color: var(--light-grayish-cyan-2);
   border: none;
   border-radius: rem(10);

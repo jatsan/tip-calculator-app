@@ -5,6 +5,14 @@ header {
   margin-bottom: rem(42);
 }
 
+.logo {
+  width: rem(87);
+  height: rem(54);
+  background-image: url('../images/logo.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .container {
   flex-direction: column;
   margin: 0 auto;

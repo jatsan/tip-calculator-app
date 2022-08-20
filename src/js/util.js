@@ -1,8 +1,3 @@
-const checkValidity = (ele) => {
-  if (ele.value === '' || ele.value === 0) {
-    return false
-  }
-  return true
-}
+const checkValidity = (ele) => !(ele.value === '' || ele.value === 0)
 
-export default checkValidity
+module.exports = checkValidity
