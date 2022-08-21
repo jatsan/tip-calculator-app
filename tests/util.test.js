@@ -1,24 +1,24 @@
-const valid = require('../src/js/util')
+const isValid = require('../src/js/util')
 
-describe('checkValidity function', () => {
+describe('', () => {
   test('should return false if zero', () => {
-    const result = valid(0)
+    const result = isValid(0)
     expect(result).toBe(false)
   })
   test('should return false if blank', () => {
-    const result = valid('')
+    const result = isValid('')
     expect(result).toBe(false)
   })
   test('should return false if negative', () => {
-    const result = valid(-56)
+    const result = isValid(-56)
     expect(result).toBe(false)
   })
   test('should return false if not whole number', () => {
-    const result = valid(5.5)
+    const result = isValid(5.5)
     expect(result).toBe(false)
   })
   test('should return true if num is positive whole number', () => {
-    const result = valid(5)
+    const result = isValid(5)
     expect(result).toBe(true)
   })
 })

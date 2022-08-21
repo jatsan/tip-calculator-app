@@ -1,5 +1,6 @@
 import '../scss/style.scss'
-import * as util from './util'
+import isValid from './util'
+import * as display from './display'
 import tipCalculator from './tipCalc'
 
 const initApp = (tipCalc) => {
@@ -8,8 +9,8 @@ const initApp = (tipCalc) => {
   const billInput = document.querySelector('.bill')
   billInput.addEventListener('blur', () => {
     calc.billInit = Number(billInput.value).toFixed(2)
-    if (calc.billInit <= 0) util.updateBillDisplay(null)
-    else util.updateBillDisplay(calc.billInit)
+    if (calc.billInit <= 0) display.updateBillDisplay(null)
+    else display.updateBillDisplay(calc.billInit)
   })
 
   const btns = document.querySelector('.tip_btns')
@@ -44,16 +45,16 @@ const initApp = (tipCalc) => {
   inpObj.addEventListener('blur', () => {
     const error = document.querySelector('.calc_input__err-label')
 
-    if (!util.valid(inpObj.value)) {
+    if (!isValid(inpObj.value)) {
       error.style.visibility = 'visible'
       inpObj.style.border = '0.0625rem solid red'
       calc.numPeople = 0
-      util.updateNumOfPeopleDisplay(calc.numPeople)
+      display.updateNumOfPeopleDisplay(calc.numPeople)
     } else {
       error.style.visibility = 'hidden'
       inpObj.style.border = 'none'
       calc.numPeople = inpObj.value
-      util.updateNumOfPeopleDisplay(calc.numPeople)
+      display.updateNumOfPeopleDisplay(calc.numPeople)
     }
 
     calc.calcTipTotal()
@@ -64,11 +65,11 @@ const initApp = (tipCalc) => {
     const tipAmt = calc.getTipAmountPerPerson()
     const billAmt = calc.getBillTotalPerPerson()
 
-    util.updateOutputDisplay(tipAmt, billAmt)
+    display.updateOutputDisplay(tipAmt, billAmt)
   })
 
   resetBtn.addEventListener('click', () => {
-    util.resetAllDisplays()
+    display.resetAllDisplays()
   })
 }
 
