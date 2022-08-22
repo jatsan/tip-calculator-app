@@ -14,7 +14,7 @@ const error = document.querySelector('.calc_input__err-label')
 let tipSelected
 
 billInput.addEventListener('blur', () => {
-  tipCalc.billInit = Number(billInput.value).toFixed(2)
+  tipCalc.billInit = billInput.value
   if (tipCalc.billInit <= 0) display.updateBillDisplay(null)
   if (tipCalc.billInit > 0) display.updateBillDisplay(tipCalc.billInit)
   display.updateOutputDisplay(tipCalc.updateInfo())
@@ -71,5 +71,8 @@ pplInput.addEventListener('input', () => {
 
 resetBtn.addEventListener('click', () => {
   showErrorMsg(false)
+  tipCalc.numPeople = null
+  tipCalc.billInit = null
+  tipCalc.tipAmount = null
   display.resetAllDisplays(tipSelected)
 })
