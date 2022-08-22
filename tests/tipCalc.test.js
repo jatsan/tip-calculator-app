@@ -26,7 +26,7 @@ describe('Tip Calculator', () => {
     expect(expected1).toBe(result)
     expect(expected2).toBe(result)
   })
-  test('should return $8.25 tip amount per person given $15 bill & 10% tip split 2 ways', () => {
+  test('should return $8.25 total bill per person given $15 bill & 10% tip split 2 ways', () => {
     const expected1 = tipCalculator.calcBillTotalPerPerson()
     const expected2 = tipCalculator.getBillTotalPerPerson()
     const result = '8.25'
