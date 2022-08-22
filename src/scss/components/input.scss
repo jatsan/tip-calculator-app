@@ -92,13 +92,14 @@
 .tip_custom {
   height: rem(50);
   width: rem(145);
-  padding: rem(20);
+  padding: rem(10);
   text-align: right;
   background-color: var(--light-grayish-cyan-2);
   border: none;
   border-radius: rem(10);
   font-family: var(--font-space-mono);
-  font-size: rem(24);
+  font-size: rem(20);
+  font-weight: 700;
   color: var(--very-dark-cyan);
   cursor: pointer;
 
@@ -107,7 +108,8 @@
     height: rem(38);
 
     &::placeholder {
-      font-size: rem(15);
+      text-align: center;
+      font-size: rem(18);
     }
   }
 }

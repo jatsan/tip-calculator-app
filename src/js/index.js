@@ -16,7 +16,8 @@ let tipSelected
 billInput.addEventListener('blur', () => {
   tipCalc.billInit = Number(billInput.value).toFixed(2)
   if (tipCalc.billInit <= 0) display.updateBillDisplay(null)
-  else display.updateBillDisplay(tipCalc.billInit)
+  if (tipCalc.billInit > 0) display.updateBillDisplay(tipCalc.billInit)
+  display.updateOutputDisplay(tipCalc.updateInfo())
 })
 
 btns.addEventListener('click', (event) => {
@@ -28,6 +29,7 @@ btns.addEventListener('click', (event) => {
     event.target.classList.add('selected')
     tipSelected = document.querySelector('.tipBtn.selected')
     tipCalc.tipAmount = tipSelected.value
+    display.updateOutputDisplay(tipCalc.updateInfo())
   }
   if (event.target.nodeName === 'INPUT') {
     buttons.forEach((element) => {
@@ -38,29 +40,27 @@ btns.addEventListener('click', (event) => {
 
     tipSelected.addEventListener('input', () => {
       tipCalc.tipAmount = tipSelected.value
+      display.updateOutputDisplay(tipCalc.updateInfo())
     })
   }
 })
 
-pplInput.addEventListener('blur', () => {
+pplInput.addEventListener('input', () => {
   if (!isValid(pplInput.value)) {
     error.style.visibility = 'visible'
     pplInput.style.border = '0.0625rem solid red'
-    tipCalc.numPeople = 0
+    tipCalc.numPeople = null
     display.updateNumOfPeopleDisplay(tipCalc.numPeople)
+    display.updateOutputDisplay(tipCalc.updateInfo())
   } else {
     error.style.visibility = 'hidden'
     pplInput.style.border = 'none'
     tipCalc.numPeople = pplInput.value
     display.updateNumOfPeopleDisplay(tipCalc.numPeople)
+    display.updateOutputDisplay(tipCalc.updateInfo())
   }
-
-  const tipAmt = tipCalc.getTipAmountPerPerson()
-  const billAmt = tipCalc.getBillTotalPerPerson()
-
-  display.updateOutputDisplay(tipAmt, billAmt)
 })
 
 resetBtn.addEventListener('click', () => {
-  display.resetAllDisplays()
+  display.resetAllDisplays(tipSelected)
 })
