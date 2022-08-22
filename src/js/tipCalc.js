@@ -9,9 +9,7 @@ const tipCalculator = {
     return (parseFloat(this.calcTipTotal()) / this.numPeople).toFixed(2)
   },
   calcBillTotal() {
-    return (
-      parseFloat(this.billInit) + parseFloat(this.calcTipTotal())
-    ).toFixed(2)
+    return (this.billInit + parseFloat(this.calcTipTotal())).toFixed(2)
   },
   calcBillTotalPerPerson() {
     return (parseFloat(this.calcBillTotal()) / this.numPeople).toFixed(2)

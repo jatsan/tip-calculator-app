@@ -14,9 +14,11 @@ const error = document.querySelector('.calc_input__err-label')
 let tipSelected
 
 billInput.addEventListener('blur', () => {
-  tipCalc.billInit = billInput.value
+  tipCalc.billInit = parseFloat(billInput.value)
   if (tipCalc.billInit <= 0) display.updateBillDisplay(null)
-  if (tipCalc.billInit > 0) display.updateBillDisplay(tipCalc.billInit)
+  if (tipCalc.billInit > 0) {
+    display.updateBillDisplay(tipCalc.billInit.toFixed(2))
+  }
   display.updateOutputDisplay(tipCalc.updateInfo())
 })
 
