@@ -10,7 +10,7 @@ const updateNumOfPeopleDisplay = (val) => {
   document.getElementById('ppl').value = val
 }
 
-const updateOutputDisplay = (info) => {
+const updateOutputDisplay = (info = ['0.00', '0.00']) => {
   document.querySelector('.tipAmt_display').innerHTML = `$${info[0]}`
   document.querySelector('.totalAmt_display').innerHTML = `$${info[1]}`
 }
@@ -19,7 +19,7 @@ const resetAllDisplays = (tipSelected) => {
   updateBillDisplay(null)
   updateCustomBtnDisplay(null)
   updateNumOfPeopleDisplay(null)
-  updateOutputDisplay(['0.00', '0.00'])
+  updateOutputDisplay()
   tipSelected.classList.remove('selected')
 }
 

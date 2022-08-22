@@ -6,9 +6,9 @@ const tipCalc = require('./tipCalc')
 
 const resetBtn = document.querySelector('.resetBtn')
 const billInput = document.querySelector('.bill')
-const btns = document.querySelector('.tip_btns')
+const tipSection = document.querySelector('.tip_btns')
 const buttons = document.querySelectorAll('.tipBtn')
-const custBtn = document.querySelector('.tip_custom')
+const custTipInput = document.querySelector('.tip_custom')
 const pplInput = document.querySelector('.ppl')
 const error = document.querySelector('.calc_input__err-label')
 let tipSelected
@@ -20,9 +20,9 @@ billInput.addEventListener('blur', () => {
   display.updateOutputDisplay(tipCalc.updateInfo())
 })
 
-btns.addEventListener('click', (event) => {
+tipSection.addEventListener('click', (event) => {
   if (event.target.nodeName === 'BUTTON') {
-    custBtn.classList.remove('selected')
+    custTipInput.classList.remove('selected')
     buttons.forEach((element) => {
       element.classList.remove('selected')
     })
