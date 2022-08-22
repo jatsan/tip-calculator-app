@@ -45,16 +45,24 @@ tipSection.addEventListener('click', (event) => {
   }
 })
 
-pplInput.addEventListener('input', () => {
-  if (!isValid(pplInput.value)) {
+const showErrorMsg = (show = true) => {
+  if (show) {
     error.style.visibility = 'visible'
     pplInput.style.border = '0.0625rem solid red'
+  } else {
+    error.style.visibility = 'hidden'
+    pplInput.style.border = 'none'
+  }
+}
+
+pplInput.addEventListener('input', () => {
+  if (!isValid(pplInput.value)) {
+    showErrorMsg(true)
     tipCalc.numPeople = null
     display.updateNumOfPeopleDisplay(tipCalc.numPeople)
     display.updateOutputDisplay(tipCalc.updateInfo())
   } else {
-    error.style.visibility = 'hidden'
-    pplInput.style.border = 'none'
+    showErrorMsg(false)
     tipCalc.numPeople = pplInput.value
     display.updateNumOfPeopleDisplay(tipCalc.numPeople)
     display.updateOutputDisplay(tipCalc.updateInfo())
@@ -62,5 +70,6 @@ pplInput.addEventListener('input', () => {
 })
 
 resetBtn.addEventListener('click', () => {
+  showErrorMsg(false)
   display.resetAllDisplays(tipSelected)
 })
