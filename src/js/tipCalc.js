@@ -2,10 +2,6 @@ const tipCalculator = {
   billInit: 0,
   tipAmount: 0,
   numPeople: 0,
-  tipTotal: 0,
-  billTotal: 0,
-  tipAmountPerPerson: 0,
-  billTotalPerPerson: 0,
   calcTipTotal() {
     return (this.billInit * (this.tipAmount / 100)).toFixed(2)
   },
@@ -28,9 +24,7 @@ const tipCalculator = {
   },
   updateInfo() {
     if (this.numPeople !== null && this.numPeople !== 0) {
-      const tipAmt = this.getTipAmountPerPerson()
-      const billAmt = this.getBillTotalPerPerson()
-      return [tipAmt, billAmt]
+      return [this.getTipAmountPerPerson(), this.getBillTotalPerPerson()]
     }
     return ['0.00', '0.00']
   },
