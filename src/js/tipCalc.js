@@ -26,6 +26,14 @@ const tipCalculator = {
   getBillTotalPerPerson() {
     return this.calcBillTotalPerPerson()
   },
+  updateInfo() {
+    if (this.numPeople !== null && this.numPeople !== 0) {
+      const tipAmt = this.getTipAmountPerPerson()
+      const billAmt = this.getBillTotalPerPerson()
+      return [tipAmt, billAmt]
+    }
+    return ['0.00', '0.00']
+  },
 }
 
 module.exports = tipCalculator

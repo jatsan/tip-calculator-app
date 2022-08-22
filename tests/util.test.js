@@ -1,6 +1,6 @@
 const isValid = require('../src/js/util')
 
-describe('Check Validation', () => {
+describe('People Input Validation Checks', () => {
   test('should return false if zero', () => {
     const result = isValid(0)
     expect(result).toBe(false)
