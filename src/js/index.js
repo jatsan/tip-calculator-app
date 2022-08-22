@@ -2,7 +2,6 @@ import '../scss/style.scss'
 import isValid from './util'
 import * as display from './display'
 import tipCalculator from './tipCalc'
-// import doTipCalculations from './controller'
 
 const initApp = (tipCalc) => {
   const calc = tipCalc
