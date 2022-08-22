@@ -1,9 +1,9 @@
 const tipCalculator = {
-  billInit: 0.0,
+  billInit: 0,
   tipAmount: 0,
   numPeople: 0,
   tipTotal: 0,
-  billTotal: 0.0,
+  billTotal: 0,
   tipAmountPerPerson: 0,
   billTotalPerPerson: 0,
   calcTipTotal() {
