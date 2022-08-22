@@ -2,11 +2,13 @@ import '../scss/style.scss'
 import isValid from './util'
 import * as display from './display'
 import tipCalculator from './tipCalc'
+// import doTipCalculations from './controller'
 
 const initApp = (tipCalc) => {
   const calc = tipCalc
   const resetBtn = document.querySelector('.resetBtn')
   const billInput = document.querySelector('.bill')
+
   billInput.addEventListener('blur', () => {
     calc.billInit = Number(billInput.value).toFixed(2)
     if (calc.billInit <= 0) display.updateBillDisplay(null)
@@ -56,11 +58,6 @@ const initApp = (tipCalc) => {
       calc.numPeople = inpObj.value
       display.updateNumOfPeopleDisplay(calc.numPeople)
     }
-
-    calc.calcTipTotal()
-    calc.calcTipAmountPerPerson()
-    calc.calcBillTotal()
-    calc.calcBillTotalPerPerson()
 
     const tipAmt = calc.getTipAmountPerPerson()
     const billAmt = calc.getBillTotalPerPerson()
